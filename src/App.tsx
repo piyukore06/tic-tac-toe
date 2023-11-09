@@ -1,24 +1,65 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import Container from './Container/Container';
+import Player from './Players/Player';
+const allEqual = (arr: Array<PlayerType | ''>) => arr.every(v => v === arr[0]);
+export const BoxSize = 9;
+export type PlayerType = 'X' | 'O';
+const Conditions = [
+  [0, 1, 2],
+  [3,4,5],
+  [6,7,8],
+  [0,3,6],
+  [1,4,7],
+  [2,5,8],
+  [0,4,8],
+  [2,4,6],
+]
 
 function App() {
+  const [hasWon, setHasWon] = useState<boolean>(false);
+  const [currentPlayer, setCurrentPlayer] = useState<PlayerType>('X');
+  const [boxState, setBoxState] = useState<Array<PlayerType | ''>>(Array(BoxSize).fill(''));
+
+  const onNewGame = () => {
+    setHasWon(false);
+    setCurrentPlayer('X');
+    setBoxState(Array(BoxSize).fill(''));
+  };
+
+  const onIndexClick = (index: number) => {
+    setCurrentPlayer((play) =>  play === 'X' ? 'O' : 'X');
+    if (index <= BoxSize && boxState[index] === '') {
+      setBoxState((lastBoxState) => ([...lastBoxState.slice(0, index), currentPlayer, ...lastBoxState.slice(index + 1)]));
+    }
+  };
+
+  const spreadJoy = (playerType: PlayerType) => {
+    setCurrentPlayer(playerType);
+    setHasWon(true);
+  };
+
+  useEffect(() => {
+    for (const condition of Conditions) {
+      const mapping = condition.map((index) => boxState[index]).filter(each => !!each);
+      if (mapping.length ===3 && allEqual(mapping)) {
+        spreadJoy(mapping[0] as PlayerType);
+        break;
+      }
+    }
+ }, [boxState]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1 className="header">
+        Tic-Tac-Toe
+        <br />
+      </h1>
+      <Player onNewGame={onNewGame} hasWon={hasWon} playerNo={currentPlayer} />
+      <div className="body">
+        <Container hasWon={hasWon} boxState={boxState} onIndexClick={onIndexClick} />
+      </div>
+      <div className="footer">Copyright 2023</div>
     </div>
   );
 }
