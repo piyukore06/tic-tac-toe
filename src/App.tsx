@@ -17,7 +17,7 @@ const Conditions = [
 ]
 
 function App() {
-  const [hasWon, setHasWon] = useState<boolean>(false);
+  const [hasWon, setHasWon] = useState<boolean | 'NOONE'>(false);
   const [currentPlayer, setCurrentPlayer] = useState<PlayerType>('X');
   const [boxState, setBoxState] = useState<Array<PlayerType | ''>>(Array(BoxSize).fill(''));
 
@@ -40,13 +40,19 @@ function App() {
   };
 
   useEffect(() => {
-    for (const condition of Conditions) {
-      const mapping = condition.map((index) => boxState[index]).filter(each => !!each);
-      if (mapping.length ===3 && allEqual(mapping)) {
-        spreadJoy(mapping[0] as PlayerType);
-        break;
+      // TODO Tests
+      const joyNotSpread = !Conditions.filter((condition) => {
+        const mapping = condition.map((index) => boxState[index]).filter(each => !!each);
+        if (mapping.length ===3 && allEqual(mapping)) {
+          spreadJoy(mapping[0] as PlayerType);
+          return true;
+        }
+        return false;
+      }).length;
+      if (boxState.filter(Boolean).length === BoxSize && joyNotSpread) {
+        setHasWon('NOONE');
       }
-    }
+      
  }, [boxState]);
 
   return (
