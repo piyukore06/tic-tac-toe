@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders proper hasWon output 1`] = `
+<div
+  className="player"
+>
+  Player 
+  X
+  <br />
+  <br />
+</div>
+`;
+
+exports[`renders proper hasWon output 2`] = `
+<div
+  className="player"
+>
+  Player 
+  X
+  <br />
+  🎉🥳
+  <br />
+  <button
+    onClick={[Function]}
+  >
+    New Game
+  </button>
+</div>
+`;
+
+exports[`renders proper hasWon output 3`] = `
+<div
+  className="player"
+>
+  Player 
+  X
+  <br />
+  No one won, Try Again!!
+  <br />
+  <button
+    onClick={[Function]}
+  >
+    New Game
+  </button>
+</div>
+`;
+
+exports[`renders proper playerNo output 1`] = `
+<div
+  className="player"
+>
+  Player 
+  X
+  <br />
+  <br />
+</div>
+`;
+
+exports[`renders proper playerNo output 2`] = `
+<div
+  className="player"
+>
+  Player 
+  O
+  <br />
+  <br />
+</div>
+`;

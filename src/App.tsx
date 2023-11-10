@@ -65,7 +65,7 @@ function App() {
       <div className="body">
         <Container hasWon={hasWon} boxState={boxState} onIndexClick={onIndexClick} />
       </div>
-      <div className="footer">Copyright 2023</div>
+      <div className="footer">Copyright © 2023</div>
     </div>
   );
 }

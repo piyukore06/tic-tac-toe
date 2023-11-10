@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders proper hasWon and boxState output 1`] = `
+<div
+  className="container"
+>
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  />
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  />
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  />
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  />
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  />
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  />
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  />
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  />
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`renders proper hasWon and boxState output 2`] = `
+<div
+  className="container"
+>
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  >
+    O
+  </button>
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  >
+    X
+  </button>
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  />
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  >
+    O
+  </button>
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  >
+    X
+  </button>
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  >
+    X
+  </button>
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  >
+    O
+  </button>
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  />
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`renders proper hasWon and boxState output 3`] = `
+<div
+  className="container"
+>
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  >
+    O
+  </button>
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  >
+    X
+  </button>
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  />
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  >
+    O
+  </button>
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  >
+    X
+  </button>
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  >
+    X
+  </button>
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  >
+    O
+  </button>
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  />
+  <button
+    className="box"
+    disabled={false}
+    onClick={[Function]}
+  />
+</div>
+`;
