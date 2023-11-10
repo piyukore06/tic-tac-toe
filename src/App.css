@@ -29,7 +29,7 @@
     flex-wrap: wrap;
     gap: 5px 5px;
     justify-content: center;
-    width: var(--size-fluid-8);
+    width: var(--size-13);
 }
 .player {
     height: 30%;
@@ -38,8 +38,8 @@
     color: var(--red-6); 
 }
 .box {
-    height: var(--size-fluid-5);
-    width: var(--size-fluid-5);
+    height: var(--size-9);
+    width: var(--size-9);
     border: 1px solid var(--cyan-8);
     display: flex;
     justify-content: center;
